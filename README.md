@@ -225,7 +225,8 @@ Em instâncias com o GDS instalado, os próximos passos naturais são:
 
 ### Erro de `file:///` no Aura
 
-**Problema:** o script local não encontra arquivos quando executado no Aura.  
+**Problema:** o script local não encontra arquivos quando executado no Aura.
+
 **Solução:** hospedar o CSV em HTTPS e usar `LOAD CSV FROM 'https://...'` ou importar visualmente com o Data Importer.
 
 ## Estrutura do repositório
