@@ -205,18 +205,22 @@ Em instâncias com o GDS instalado, os próximos passos naturais são:
 
 ### Dados duplicados após recarregar o script
 
-**Problema:** usuários, músicas ou relações aparecem repetidos.  
-**Causa:** uso de `CREATE` em vez de `MERGE`, ou ausência das restrições.  
+**Problema:** usuários, músicas ou relações aparecem repetidos.
+
+**Causa:** uso de `CREATE` em vez de `MERGE`, ou ausência das restrições.
+
 **Solução:** executar as restrições antes da carga e usar `MERGE` nas entidades e relações. O script deste projeto é reexecutável.
 
 ### Carregamento lento ou aumento excessivo de memória
 
-**Problema:** `LOAD CSV` em uma base grande trava ou consome muita memória.  
+**Problema:** `LOAD CSV` em uma base grande trava ou consome muita memória.
+
 **Solução:** criar índices/restrições antes da carga, validar o CSV e dividir o processamento com lotes ou `CALL { ... } IN TRANSACTIONS`.
 
 ### Resultados repetidos ou pouco relevantes
 
-**Problema:** a recomendação retorna faixas já ouvidas, itens irrelevantes ou duplicatas.  
+**Problema:** a recomendação retorna faixas já ouvidas, itens irrelevantes ou duplicatas.
+
 **Solução:** excluir relações existentes em `WHERE NOT (u)-[:LISTENED_TO]->(rec)`, usar `count(DISTINCT outro)` e exigir uma força mínima para itens com poucos usuários em comum.
 
 ### Erro de `file:///` no Aura
