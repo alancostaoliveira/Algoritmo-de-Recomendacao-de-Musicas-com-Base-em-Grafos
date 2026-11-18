@@ -1,0 +1,3 @@
+CREATE CONSTRAINT music_id IF NOT EXISTS
+FOR (m:Music)
+REQUIRE m.trackId IS UNIQUE;

@@ -1,0 +1,3 @@
+CREATE CONSTRAINT genre_name IF NOT EXISTS
+FOR (g:Genre)
+REQUIRE g.nome IS UNIQUE;

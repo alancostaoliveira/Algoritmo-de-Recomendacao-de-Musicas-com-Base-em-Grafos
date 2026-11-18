@@ -1,0 +1,3 @@
+CREATE CONSTRAINT artist_name IF NOT EXISTS
+FOR (a:Artist)
+REQUIRE a.nome IS UNIQUE;
